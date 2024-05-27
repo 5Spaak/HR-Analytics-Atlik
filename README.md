@@ -133,5 +133,5 @@ Create a new column ( Days of the week )
 > Days of Week = FORMAT('Final Data'[Date], 'ddd')
 
 ## Final Dashboard 
-![The San Juan Mountains are beautiful!](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
+![The San Juan Mountains are beautiful!](HR Analytics Atlik.PNG "San Juan Mountains")
 
