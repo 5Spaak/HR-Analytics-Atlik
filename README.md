@@ -1,10 +1,10 @@
 # HR Analytics AtliQ
 
-### **1. Problem Statement**
+## **1. Problem Statement**
 
 In this project, we'll take a real dataset and see how a data analyst thinks and reflects. The data we'll use comes from AtliQ, a software and data solutions company. It will provide us with employee attendance data. We have three months of data. We have the dates in the columns and the employee names in the rows.
 
-### **2. Understanding Requirement.**
+## **2. Understanding Requirement.**
 
 In this section we'll use the data (Excel file) provided by AtliQ's HR manager and try to understand her needs.
 
@@ -12,22 +12,37 @@ As a data analyst, it's important that we listen more than you talk. In this par
 
 Ask questions to understand their short- and long-term plans and align your solutions accordingly.
 
-### **Insights They Need**
+## **Insights They Need**
  * Working Preference of People From Home And From Office
  * Find Sick Leave %
 
 If we know when most employees are working at home or in the office, we can easily plan activities for everyone.
 
-### **3. Gathering and Transforming Data**
+## **3. Gathering and Transforming Data**
 In this section, we'll talk about collecting and transforming data with Power Query. Power Query is a feature in Power BI that helps you collect and transform data.
 
 - One of the tricks of the data analyst trade is Googling solutions.
 - A parameter is a way to dynamically filter data.
 
-### **4. Creating metrics**
+## **4. Creating metrics**
 
 Metrics are quantitative assessments that help us make decisions.
 
 1. People's preference between working at home and working in the office
 2. Percentage of total sick leave to understand to monitor employee well-being
 3. Learning the basics of Power BI will also be one of the constant goals of a data analyst when designing projects.
+
+
+Nous commençons par créer une nouvelle Table `Key Measures` 
+
+1. Commençons à chercher le nombre total de jours de travail :
+
+   Voici la formule :
+
+   > Total Working Days =
+   >    var totaldays = COUNT('Final Data'[value])
+   >    var nonworkingdays = CALCULATE(COUNT('Final Data'[value]), 'Final Data'[value] in {"WO","HO"})
+   >    RETURN
+   >     totaldays - nonworkingdays
+
+On va utiliser `CALCULATE()` function pour calculer WO(Weekly off) et Holidays(HO)
